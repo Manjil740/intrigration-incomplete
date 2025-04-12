@@ -1,0 +1,13 @@
+first the file is still incomplete theres still alot of changes to make here in this code 
+the code use sympy for some of mathmatical expression so before running this code you should import sympy 
+heres step by step guide
+lets check is python is installed in your device first 
+python --version  to check if your python is downloadedw
+python3 --version to check if you got python3 
+now lets check if you got pip installed as it is important to download any libary
+pip --version 
+pip3 --version if you got python3
+now lets get with downloading sympy after we confirmed you got everything needed
+pip install sympy
+pip3 install sympy id you have python3  
+seem you are good to go now 
