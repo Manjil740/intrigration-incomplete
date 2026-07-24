@@ -53,8 +53,8 @@ source venv/bin/activate         # Linux/Mac
 
 # Install dependencies & run
 pip install -r requirements.txt
-python math_solver.py            # Windows/Mac
-python3 math_solver.py           # Linux
+python Math_solver.py            # Windows/Mac
+python3 Math_solver.py           # Linux
 ```
 
 ### Your First Calculation
@@ -85,7 +85,7 @@ mkdir calculus-solver
 cd calculus-solver
 
 # 2. Ensure you have these files:
-#    - math_solver.py
+#    - Math_solver.py
 #    - requirements.txt
 #    - README.md
 
@@ -101,15 +101,15 @@ source venv/bin/activate         # Linux/Mac
 pip install -r requirements.txt
 
 # 6. Run application
-python math_solver.py            # Windows/Mac
-python3 math_solver.py           # Linux
+python Math_solver.py            # Windows/Mac
+python3 Math_solver.py           # Linux
 ```
 
 ### Option 2: Direct Install
 
 ```bash
 pip install -r requirements.txt
-python math_solver.py
+python Math_solver.py
 ```
 
 > ⚠️ **Note:** Virtual environments are recommended for clean Python package management.
@@ -181,7 +181,7 @@ Virtual Env 2: SymPy 1.11, NumPy 1.25 ← Different project
 
 6. **Run Application**
    ```bash
-   python math_solver.py
+   python Math_solver.py
    ```
 
 7. **Deactivate When Done**
@@ -227,7 +227,7 @@ Virtual Env 2: SymPy 1.11, NumPy 1.25 ← Different project
 
 7. **Run Application**
    ```bash
-   python3 math_solver.py
+   python3 Math_solver.py
    ```
 
 8. **Deactivate When Done**
@@ -244,7 +244,7 @@ Virtual Env 2: SymPy 1.11, NumPy 1.25 ← Different project
 | `python: command not found` | Use `python3` instead of `python` |
 | `pip is not installed` | Run `python3 -m pip install -r requirements.txt` |
 | `ModuleNotFoundError: No module named 'sympy'` | Activate venv and run `pip install -r requirements.txt` |
-| `Permission denied` (Linux) | Run `chmod +x math_solver.py` |
+| `Permission denied` (Linux) | Run `chmod +x Math_solver.py` |
 | Application won't start | Check Python version is 3.7+ |
 
 ---
@@ -380,7 +380,7 @@ Result: 2*x + 2
 
 ```
 ┌────────────────────────────────────────────────────────────┐
-│  🧮 Advanced Calculus Solver Pro - Version 2.0            │
+│  🧮 Advanced Calculus Solver Pro - Version 3.0            │
 ├────────────────────────────────────────────────────────────┤
 │  Input Expression:  [____________________________]         │
 │  Operation:         [Derivative ▼]                         │
@@ -686,7 +686,7 @@ Result:   x + 1
 
 <details>
 <summary><strong>Q: Can I extend it with my own functions?</strong></summary>
-<p>Yes! Edit <code>math_solver.py</code> to add custom operations.</p>
+<p>Yes! Edit <code>Math_solver.py</code> to add custom operations.</p>
 </details>
 
 ---
@@ -791,7 +791,7 @@ pip list | grep -E "sympy|numpy|matplotlib"
 
 ## 📄 License & Credits
 
-### Advanced Calculus Solver Pro - Version 2.0
+### Advanced Calculus Solver Pro - Version 3.0
 
 *A professional mathematical computation tool*
 
@@ -832,7 +832,7 @@ pip list | grep -E "sympy|numpy|matplotlib"
 </p>
 
 <p align="center">
-  <em>Version 2.0 - Enhanced Edition | December 28, 2025</em>
+  <em>Version 3.0 - Enhanced Edition | December 28, 2025</em>
 </p>
 
 <p align="center">

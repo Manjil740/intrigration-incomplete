@@ -1,0 +1,47 @@
+Advanced Calculus Solver Pro - Export
+==================================================
+
+Expression: sin(x)
+Operation: Critical Points
+Timestamp: 2026-07-24 17:28:26
+
+RESULT:
+[pi/2, 3*pi/2]
+
+STEPS:
+
+  --- Step 1: 📋 Problem Statement ---
+  Description: Find critical points where the derivative equals zero or is undefined
+  Formula: f(x) = sin(x)
+  Result: Find x where f'(x) = 0 or f'(x) is undefined
+
+  --- Step 2: 📝 Step 1: Find First Derivative ---
+  Description: Critical points occur where f'(x) = 0
+  Formula: f'(x) = d/dx[sin(x)]
+  Calculation: Differentiating
+  Result: f'(x) = cos(x)
+
+  --- Step 3: 📝 Step 2: Set Derivative Equal to Zero ---
+  Description: Solve f'(x) = 0
+  Formula: cos(x) = 0
+  Calculation: Finding roots
+  Result: Solving for x
+
+  --- Step 4: 📝 Step 3: Check Where Derivative is Undefined ---
+  Description: Also consider points where f'(x) does not exist
+  Formula: Find domain restrictions of f'(x)
+  Calculation: Checking for undefined points
+  Result: Domain analyzed
+
+  --- Step 5: ✅ Critical Points Found ---
+  Description: List of all critical points
+  Formula: f'(x) = 0 at x = [pi/2, 3*pi/2]
+  Calculation: Total critical points: 2
+  Result: Critical points: [pi/2, 3*pi/2]
+
+  --- Step 6: 💡 Interpretation ---
+  Description: Critical points indicate potential:
+  Calculation: • Local maxima
+• Local minima
+• Saddle points
+  Result: Use second derivative test to classify

@@ -8,14 +8,13 @@ Created: December 28, 2025 | Updated: Enhanced UI & Step-by-Step Engine
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog, scrolledtext
 import tkinter.font as tkFont
-from tkinter import colorchooser
 import sympy as sp
 from sympy import (
     symbols, diff, integrate, limit, series, solve, simplify, 
     factor, expand, apart, Symbol, sympify, lambdify,
     sin, cos, tan, cot, sec, csc, sinh, cosh, tanh,
     asin, acos, atan, asinh, acosh, atanh,
-    exp, log, ln, sqrt, cbrt, Abs, sign, ceil, floor,
+    exp, log, ln, sqrt, cbrt, Abs, sign, ceiling, floor,
     factorial, gamma, zeta, pi, E, I, oo, nan, zoo,
     Rational, Poly, roots, Eq, re, im, conjugate,
     Array, Matrix, eye, zeros, ones, diag
@@ -29,10 +28,6 @@ import traceback
 from datetime import datetime
 import json
 import os
-from PIL import Image, ImageDraw, ImageFont
-import io
-from scipy import optimize, integrate as scipy_integrate, special
-import webbrowser
 
 
 class MathExpressionParser:
@@ -61,7 +56,7 @@ class MathExpressionParser:
                 'asin': asin, 'acos': acos, 'atan': atan,
                 'asinh': asinh, 'acosh': acosh, 'atanh': atanh,
                 'exp': exp, 'log': log, 'ln': ln, 'sqrt': sqrt, 'cbrt': cbrt,
-                'Abs': Abs, 'sign': sign, 'ceil': ceil, 'floor': floor,
+                'Abs': Abs, 'sign': sign, 'ceiling': ceiling, 'floor': floor,
                 'factorial': factorial, 'gamma': gamma, 'zeta': zeta,
                 'pi': pi, 'e': E, 'E': E, 'i': I, 'I': I,
                 'oo': oo, 'inf': oo, 'infinity': oo,
@@ -590,7 +585,7 @@ class StepByStepSolver:
                 if degree == 2:
                     self._add_step(
                         "📝 Step 3: Quadratic Formula",
-                        "For ax² + bx + c = 0, use: x = (-b ± √(b²-2ac)) / 2a",
+                        "For ax² + bx + c = 0, use: x = (-b ± √(b² - 4ac)) / 2a",
                         formula="x = (-b ± √(b² - 4ac)) / 2a",
                         calculation="Identifying coefficients a, b, c",
                         result="Applying quadratic formula"
@@ -1059,7 +1054,7 @@ class StepByStepSolver:
 
 
 # Alias for backward compatibility
-CalcutusSolver = StepByStepSolver
+CalculusSolver = StepByStepSolver
 
 
 class GraphPlotter:
@@ -1178,12 +1173,12 @@ class EnhancedMathSolver:
     def __init__(self, root):
         """Initialize application"""
         self.root = root
-        self.root.title("Advanced Calculus Solver Pro - Version 2.0")
+        self.root.title("Advanced Calculus Solver Pro - Version 3.0")
         self.root.geometry("1400x900")
         self.root.minsize(1000, 700)
 
         # Initialize solvers
-        self.solver = CalcutusSolver()
+        self.solver = CalculusSolver()
         self.plotter = GraphPlotter()
         self.x = symbols('x')
 
@@ -1246,7 +1241,7 @@ class EnhancedMathSolver:
         title_font = tkFont.Font(family="Helvetica", size=20, weight="bold")
         title = tk.Label(
             header,
-            text="Advanced Calculus Solver Pro v2.0",
+            text="Advanced Calculus Solver Pro v3.0",
             font=title_font,
             bg=self.header_color,
             fg="white"
@@ -1836,7 +1831,18 @@ Result: {result}
                     f.write(f"RESULT:\n{self.current_result}\n\n")
                     f.write(f"STEPS:\n")
                     for i, step in enumerate(self.current_steps, 1):
-                        f.write(f"  {i}. {step}\n")
+                        if isinstance(step, dict):
+                            f.write(f"\n  --- Step {i}: {step.get('title', '')} ---\n")
+                            if step.get('description'):
+                                f.write(f"  Description: {step['description']}\n")
+                            if step.get('formula'):
+                                f.write(f"  Formula: {step['formula']}\n")
+                            if step.get('calculation'):
+                                f.write(f"  Calculation: {step['calculation']}\n")
+                            if step.get('result'):
+                                f.write(f"  Result: {step['result']}\n")
+                        else:
+                            f.write(f"  {i}. {step}\n")
 
                 messagebox.showinfo("Success", f"Exported to {filename}")
             except Exception as e:
@@ -1868,7 +1874,7 @@ Result: {result}
     def show_help(self):
         """Show help dialog"""
         help_text = """
-ADVANCED CALCULUS SOLVER PRO v2.0 - HELP
+ADVANCED CALCULUS SOLVER PRO v3.0 - HELP
 ============================================
 
 OPERATIONS:
@@ -1917,7 +1923,7 @@ FUNCTIONS:
 • Exponential: exp(x), e**x
 • Logarithmic: log(x), ln(x)
 • Powers: sqrt(x), cbrt(x), x**(1/3)
-• Special: Abs(x), sign(x), floor(x), ceil(x)
+• Special: Abs(x), sign(x), floor(x), ceiling(x)
 
 CONSTANTS:
 • pi : π
